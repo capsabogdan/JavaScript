@@ -1,0 +1,131 @@
+/* 6.
+One night you go for a ride on your motorcycle. At 00:00 you start your engine, and the built-in timer automatically begins counting the length of your ride, in minutes. 
+Off you go to explore the neighborhood.
+When you finally decide to head back, you realize there's a chance the bridges on your route home are up, leaving you stranded!
+Unfortunately, you don't have your watch on you and don't know what time it is. All you know thanks to the bike's timer is that n minutes have passed since 00:00.
+Using the bike's timer, calculate the current time. Return an answer as the sum of digits that the digital timer in the format hh:mm would show. */
+
+function lateRide(n) {
+
+    var hour = Math.trunc(n/60);
+    var minutes = n - hour*60;
+    var digits = new Array();
+    let sum = 0;
+    
+    
+    //return minutes;
+    
+    while(hour/10 > 0){
+        digits.push(hour % 10);
+        hour = Math.floor(hour/10);
+    }
+    
+    while(minutes/10 > 0){
+        digits.push(minutes % 10);
+        minutes = Math.floor(minutes / 10);
+    }
+    
+    for(let i = 0; i < digits.length; i++){
+        sum += digits[i];
+    }
+    
+    return sum;
+	
+	
+/*7. You are playing an RPG game. Currently your experience points (XP) total is equal to experience. 
+To reach the next level your XP should be at least at threshold. 
+If you kill the monster in front of you, you will gain more experience points in the amount of the reward.
+Given values experience, threshold and reward, check if you reach the next level after killing the monster. */
+
+function reachNextLevel(experience, threshold, reward) {
+    
+if( (experience + reward) >= threshold){
+    return true;
+}else{
+    return false;
+}
+    
+}
+
+/* 8
+Several people are standing in a row and need to be divided into two teams. 
+The first person goes into team 1, the second goes into team 2, the third goes into team 1 again, the fourth into team 2, and so on.
+You are given an array of positive integers - the weights of the people. 
+Return an array of two integers, where the first element is the total weight of team 1, and the second element is the total weight of team 2 after the division is complete.
+*/
+
+function alternatingSums(a) {
+
+    let sum1 = 0;
+    let sum2 = 0;
+    for(let index = 0; index <a.length; index++){
+        if(index %2 !=0){
+            sum2 += a[index];
+        }else{
+            sum1 += a[index];
+        }
+    }
+    
+    var array = [sum1, sum2];
+    
+    return array;
+}
+
+/*9. Two arrays are called similar if one can be obtained from another by swapping at most one pair of elements in one of the arrays.
+Given two arrays a and b, check whether they are similar. */
+
+
+function areSimilar(a, b) {
+     let counter = 0;
+ 
+    for(var i =0; i<a.length; i++){
+        if(a[i] != b[i]){
+            counter++;
+        }
+    }
+    
+    if(counter >= 3){
+       return false;
+    }
+    a.sort();
+    b.sort();
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] != b[i])
+            return false;
+
+    }
+    return true;
+}
+
+/** 10. You're given three integers, a, b and c. 
+It is guaranteed that two of these integers are equal to each other. 
+What is the value of the third integer? */
+
+function extraNumber(a, b, c) {
+
+    if(a==b){
+        return c;
+    }else{
+        if(a == c){
+            return b;
+        }else{
+            return a;
+        }
+    }
+}
+
+/** 11. You are given an array of integers. On each move you are allowed to increase exactly one of its element by one.
+ Find the minimal number of moves required to obtain a strictly increasing sequence from the input. */
+ 
+ function arrayChange(inputArray) {
+    let counter = 0;
+    for(let i = 1; i<inputArray.length; i++){
+     
+        while(inputArray[i-1] >= inputArray[i]){
+            inputArray[i]++;
+            counter++;
+        }
+        
+    }
+    return counter;
+}
