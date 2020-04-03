@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12. Computing Simple Interest</title>
+    <style>
+        input[type=number]{
+            width: auto;
+            padding-left: 12px 12px;
+            box-sizing: border-box;
+            border-radius: 4px;
+            border: 1px solid rgb(11, 12, 12);
+        }
+        input[type=number]:focus{
+            background-color: rgba(236, 236, 216, 0.959);
+        }
+        input[type=submit]{
+            cursor: pointer;
+        }
+        div{
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <form>
+            <label for="startAmount">Enter the principal Amount</label>
+            <input type="number" name="startAmount" id="startAmount"  step="0.1"/> 
+            <br>
+            <label for="interestRate">Enter the rate of interest</label>
+            <input type="number" name="interestRate" id="interestRate" step="0.01"/>
+            <br>
+            <label for="years">Tnter the number of years</label>
+            <input type="number" name="years" id="years"/>
+            <br>
+            <label for="finalAmount">Investment will be worth</label>         
+            <input type="text" name="finalAmount" id="finalAmount" readonly/>
+            <label for="finalAmount">$</label>         
+            <br>
+            <input type="button" value="Get Amount" onclick="getAmount()">
+            <input type="reset" value="Delete">     
+        </form>
+        <div id="error"></div>
+
+    </fieldset>
+    <script type="text/javascript" src="12. Computing Simple Interest.js"></script>
+</body>
+</html>

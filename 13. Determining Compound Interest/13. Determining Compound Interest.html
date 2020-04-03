@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13. Determining Compound Interest</title>
+    <style>
+        div{
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <form>
+            <label for="startAmount">Enter the principal Amount ($)</label>
+            <input type="text" name="startAmount" id="startAmount" />   
+            <br>
+            <label for="years">Tnter the number of years</label>
+            <input type="text" name="years" id="years"/>
+            <br>
+            <label for="interestRate">Enter the rate of interest</label>
+            <input type="number" name="interestRate" id="interestRate" step="0.01"/>
+            <br>
+            <label for="compoundPeriod">Compound periods</label>
+            <input type="number" name="compoundPeriod" id="compoundPeriod">
+            <br>
+            <label for="finalAmount">Investment will be worth</label>         
+            <input type="text" name="finalAmount" id="finalAmount" readonly/>
+            <label for="finalAmount">$</label>         
+            <br>
+            <input type="button" value="Get Amount" onclick="getAmount()">
+            
+            <input type="reset" value="Delete">  
+        </form>
+        <div id="error"></div>
+    </fieldset>
+
+    <script src="13. Determining Compound Interest.js"></script>
+    
+</body>
+</html>

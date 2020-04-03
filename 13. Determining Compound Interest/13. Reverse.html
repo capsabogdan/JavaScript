@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13. Reverse</title>
+</head>
+<body>
+
+    <fieldset>
+        <form onsubmit="getInitialInvestment()">
+            <label for="target">Target amount ($)</label>
+            <input type="number" name="target" id="target">
+            <br>
+            <label for="years">Enter the number of years</label>
+            <input type="number" name="years" id="years">
+            <br>
+            <label for="interestRate">Enter the rate of interest</label>
+            <input type="number" name="interestRate" id="interestRate" step="0.01">
+            <br>
+            <label for="compoundPeriod"> Compound frequency</label>
+            <input type="number" name="compoundPeriod" id="compoundPeriod">
+            <br>
+            <label for="initialInvestment"> Initial investment needed</label>
+            <input type="text" name="initialInvestment" id="initialInvestment" readonly>
+            <label for="initialInvestment">$</label>
+            <br>
+            <input type="submit" name="submitInvestment" id="submitInvestment">
+            <input type="reset" name="delete" id="delete">
+        </form>
+    </fieldset>
+
+    <script src="13. Reverse.js"></script>
+        
+</body>
+</html>
